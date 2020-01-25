@@ -19,7 +19,7 @@ A executable file of the Go module.
 
 ```yaml
 - name: Get bin file
-  uses: supercaracal/go-mod-ins-action@v1
+  uses: supercaracal/go-mod-dl-action@v1
   with:
     url: "https://github.com/${user}/${repository}/releases/download/${version}/${package}_${GOOS}_${GOARCH}.tar.gz"
   id: get-bin
