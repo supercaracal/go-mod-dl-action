@@ -2,6 +2,9 @@
 name: 'Executable Go module file downloader'
 description: 'Download a executable Go module file via GitHub release assets'
 author: 'Taishi Kasuga'
+branding:
+  icon: 'download'
+  color: 'white'
 inputs:
   url:
     description: 'URL of the GitHub release asset file'
