@@ -1,0 +1,16 @@
+---
+name: 'Go module installer'
+description: 'Install a Go module execution file via GitHub release assets'
+author: 'Taishi Kasuga'
+inputs:
+  url:
+    description: 'URL of the GitHub release asset file'
+    required: true
+outputs:
+  file:
+    description: 'A execution file of the module'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.url }}

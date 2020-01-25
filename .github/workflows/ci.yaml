@@ -1,0 +1,57 @@
+---
+name: CI
+on: [push]
+jobs:
+  test-zip:
+    name: Test .zip
+    timeout-minutes: 5
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Go
+        uses: actions/setup-go@v1
+        with:
+          go-version: "1.13"
+
+      - name: Add $GOPATH/bin to $PATH
+        run: echo "::add-path::$(go env GOPATH)/bin"
+
+      - name: Get bin file
+        id: get-bin
+        uses: supercaracal/go-mod-ins-action@master
+        with:
+          url: "https://github.com/Songmu/goxz/releases/download/v0.6.0/goxz_v0.6.0_linux_amd64.tar.gz"
+
+      - name: Move bin file
+        run: |
+          mkdir -p $(go env GOPATH)/bin/
+          mv ${{ steps.get-bin.outputs.file }} $(go env GOPATH)/bin/
+
+      - name: Check bin file
+        run: type goxz
+
+  test-tgz:
+    name: Test .tar.gz
+    timeout-minutes: 5
+    runs-on: macos-latest
+    steps:
+      - name: Set up Go
+        uses: actions/setup-go@v1
+        with:
+          go-version: "1.13"
+
+      - name: Add $GOPATH/bin to $PATH
+        run: echo "::add-path::$(go env GOPATH)/bin"
+
+      - name: Get bin file
+        id: get-bin
+        uses: supercaracal/go-mod-ins-action@master
+        with:
+          url: "https://github.com/tcnksm/ghr/releases/download/v0.13.0/ghr_v0.13.0_darwin_amd64.zip"
+
+      - name: Move bin file
+        run: |
+          mkdir -p $(go env GOPATH)/bin/
+          mv ${{ steps.get-bin.outputs.file }} $(go env GOPATH)/bin/
+
+      - name: Check bin file
+        run: type ghr
