@@ -12,7 +12,7 @@ if [ "${URL%.tar.gz}" != "${URL}" ]; then
   tar zxf ${FILENAME}
   readonly DIRNAME=${FILENAME%.tar.gz}
 elif [ "${URL%.zip}" != "${URL}" ]; then
-  unzip ${FILENAME}
+  unzip -q ${FILENAME}
   readonly DIRNAME=${FILENAME%.zip}
 else
   echo "Unkown file extension."
