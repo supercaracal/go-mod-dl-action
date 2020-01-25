@@ -1,7 +1,7 @@
-Go module installer action ![](https://github.com/supercaracal/go-mod-ins-action/workflows/CI/badge.svg)
+Executable Go module file download action ![](https://github.com/supercaracal/go-mod-dl-action/workflows/CI/badge.svg)
 ==========================
 
-This action download a Go module via GitHub release assets and install a execution file.
+This action download a executable Go module file via GitHub release assets.
 
 ## Inputs
 
@@ -13,7 +13,7 @@ This action download a Go module via GitHub release assets and install a executi
 
 ### `file`
 
-A execution file of the module.
+A executable file of the Go module.
 
 ## Example usage
 

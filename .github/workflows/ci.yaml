@@ -2,8 +2,8 @@
 name: CI
 on: [push]
 jobs:
-  test-zip:
-    name: Test .zip
+  test-tgz:
+    name: Test .tar.gz
     timeout-minutes: 5
     runs-on: ubuntu-latest
     steps:
@@ -29,10 +29,10 @@ jobs:
       - name: Check bin file
         run: type goxz
 
-  test-tgz:
-    name: Test .tar.gz
+  test-zip:
+    name: Test .zip
     timeout-minutes: 5
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Set up Go
         uses: actions/setup-go@v1
