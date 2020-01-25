@@ -18,7 +18,7 @@ jobs:
           echo "::add-path::$(go env GOPATH)/bin"
 
       - name: Get bin file
-        uses: supercaracal/go-mod-ins-action@master
+        uses: supercaracal/go-mod-dl-action@master
         with:
           url: "https://github.com/Songmu/goxz/releases/download/v0.6.0/goxz_v0.6.0_linux_amd64.tar.gz"
         id: get-bin
@@ -45,7 +45,7 @@ jobs:
           echo "::add-path::$(go env GOPATH)/bin"
 
       - name: Get bin file
-        uses: supercaracal/go-mod-ins-action@master
+        uses: supercaracal/go-mod-dl-action@master
         with:
           url: "https://github.com/tcnksm/ghr/releases/download/v0.13.0/ghr_v0.13.0_darwin_amd64.zip"
         id: get-bin
